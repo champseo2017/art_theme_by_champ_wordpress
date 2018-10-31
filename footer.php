@@ -56,6 +56,9 @@
       <script>
       $(document).ready(function(){
   $('nav').removeAttr( "title" );
+
+$( "li" ).before().css("content", "none");
+
 });
 </script>
 	<?php wp_footer(); ?>

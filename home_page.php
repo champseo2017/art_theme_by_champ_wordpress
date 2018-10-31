@@ -31,30 +31,27 @@ get_header(); ?>
             ?>
         </section>
         <aside id="change_color" class="one fourth left-two padded border-right bounceInLeft animated" v-bind:style="bgc">
-          <h1>Design website</h1>
+          <p><b>Design left sidebar website</b></p>
           <div class="row">
             <div class="one whole two-up-small-tablet one-up-mobile">
               <ul class="list">
                 <li>
-                {{description}}
+                <p>{{description}}</p>
                 <input type="text" v-on:input="bgc.backgroundColor = $event.target.value"/>
                 </li>
-                <li>Unordered list item #2</li>
-                <li>Unordered list item #3</li>
-                <li>Unordered list item #4</li>
+                <li>
+                <p>เลือกสี Sidebar Image Gallery</p>
+                <div id="color-picker">
+                <color-picker-select :color-options="colors" label="Select Color..." empty-option="None" input-id="color" v-model="selectedColorHex"></color-picker-select>
+
+                </div>
+                </li>
               </ul>
-            </div>
-            <div class="one whole two-up-small-tablet one-up-mobile">
-              <ol class="list">
-                <li>Ordered list item #1</li>
-                <li>Ordered list item #2</li>
-                <li>Ordered list item #3</li>
-              </ol>
             </div>
           </div>
           <hr>
           <h3>Left Sidebar Image Gallery</h3>
-          <div class="row">
+          <div class="row" v-bind:style="{background: selectedColorHex}">
             <div class="one half three-up-small-tablet two-up-mobile padded align-center"><img src="http://placehold.it/120x85/e67e22/ffffff/" alt=""></div>
             <div class="one half three-up-small-tablet two-up-mobile padded align-center"><img src="http://placehold.it/120x85/e67e22/ffffff/" alt=""></div>
             <div class="one half three-up-small-tablet two-up-mobile padded align-center"><img src="http://placehold.it/120x85/e67e22/ffffff/" alt=""></div>
