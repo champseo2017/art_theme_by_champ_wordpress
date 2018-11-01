@@ -6,18 +6,18 @@
 	
 get_header(); ?>
 
-<div class="container">
+<div class="container" id="change_color">
       <div class="padded">
         <div class="row">
           <div class="three fifths bounceInRight animated">
-            <h1 class="zero museo-slab">Web Site Example Layout</h1>
-            <p class="quicksand">Demonstrates Typography, Styled Lists, Buttons, Source Reordering, Grid Breakpoint Modifiers and Adapters</p>
+            <h1 class="zero museo-slab" v-bind:style="{color: selectedColorHex}">ยินดีต้อนรับเข้าสู่เว็บไซต์ Portfolio ของผมครับ</h1>
+            <p class="quicksand" v-bind:style="{color: selectedColorHex2}">Quality is much better than quantity. One home run is much better than two doubles.</p>
           </div>
         </div>
       </div>
       <hr>
       <article class="row">
-        <section class="two fourths right-one padded bounceInDown animated"><img src="<?php bloginfo('template_url'); ?>../images/Steve-Jobs-750x400.jpg" alt="">
+        <section  v-bind:style="bgc" class="two fourths right-one padded bounceInDown animated"><img src="<?php bloginfo('template_url'); ?>../images/Steve-Jobs-750x400.jpg" alt="">
           <?php 
                 if( have_posts() ):
                     
@@ -30,40 +30,33 @@ get_header(); ?>
 			
             ?>
         </section>
-        <aside id="change_color" class="one fourth left-two padded border-right bounceInLeft animated" v-bind:style="bgc">
-          <p><b>Design left sidebar website</b></p>
+        <aside  class="one fourth left-two padded border-right bounceInLeft animated" >
+          <p><b>Design website</b></p>
           <div class="row">
             <div class="one whole two-up-small-tablet one-up-mobile">
               <ul class="list">
                 <li>
                 <p>{{description}}</p>
-                <input type="text" v-on:input="bgc.backgroundColor = $event.target.value"/>
+                <input type="text" v-on:input="bgc.backgroundColor = $event.target.value" placeholder="ภาษาอังกฤษ"/>
                 </li>
                 <li>
-                <p>เลือกสี Sidebar Image Gallery</p>
+                <p>เปลียนสีตัวอักษร Top bar Title</p>
                 <div id="color-picker">
                 <color-picker-select :color-options="colors" label="Select Color..." empty-option="None" input-id="color" v-model="selectedColorHex"></color-picker-select>
+
+                </div>
+                </li>
+                <li>
+                <p>เปลียนสีตัวอักษร Top bar tag p</p>
+                <div id="color-picker">
+                <color-picker-select :color-options="colors" label="Select Color..." empty-option="None" input-id="color" v-model="selectedColorHex2"></color-picker-select>
 
                 </div>
                 </li>
               </ul>
             </div>
           </div>
-          <hr>
-          <h3>Left Sidebar Image Gallery</h3>
-          <div class="row" v-bind:style="{background: selectedColorHex}">
-            <div class="one half three-up-small-tablet two-up-mobile padded align-center"><img src="http://placehold.it/120x85/e67e22/ffffff/" alt=""></div>
-            <div class="one half three-up-small-tablet two-up-mobile padded align-center"><img src="http://placehold.it/120x85/e67e22/ffffff/" alt=""></div>
-            <div class="one half three-up-small-tablet two-up-mobile padded align-center"><img src="http://placehold.it/120x85/e67e22/ffffff/" alt=""></div>
-            <div class="one half three-up-small-tablet two-up-mobile padded align-center"><img src="http://placehold.it/120x85/e67e22/ffffff/" alt=""></div>
-            <div class="one half three-up-small-tablet two-up-mobile padded align-center"><img src="http://placehold.it/120x85/e67e22/ffffff/" alt=""></div>
-            <div class="one half three-up-small-tablet two-up-mobile padded align-center"><img src="http://placehold.it/120x85/e67e22/ffffff/" alt=""></div>
-          </div>
-          <div class="pad-right pad-left">
-            <p class="align-right">
-              <button class="orange">View more</button>
-            </p>
-          </div>
+         
         </aside>
         <aside class="one fourth padded border-left bounceInRight animated">
           <h1>Right Sidebar</h1>

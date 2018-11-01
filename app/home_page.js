@@ -74,10 +74,11 @@ var ColorPickerSelect = {
 var change_color_sidebar = new Vue({
 	el: '#change_color',
 	data: {
-		description: 'ใส่ชื่อสีพื้นหลังของ Left Sidebar',
+		description: 'เปลียนสีพื้นหลังบทความ ใส่ชื่อสีพื้นหลัง',
 		name : 'champ',
 		colors: colors,
 		selectedColorHex: '',
+		selectedColorHex2: '',
 		bgc: {
 			backgroundColor: ''
 		}
